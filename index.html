@@ -19,12 +19,12 @@
 	
 	<a-assets>
       <a-asset-item
-         id="animated-asset"
-         src="assets/asset.glb"
+         id="animated-charizar"
+         src="modelo3d/charizar.glb"
       ></a-asset-item>
 	  <a-asset-item
-         id="animated-nefer"
-         src="assets/nefertiti.glb"
+         id="animated-zombi"
+         src="modelo3d/zombi.glb"
       ></a-asset-item>
     </a-assets>
 
@@ -32,38 +32,31 @@
 		<a-marker preset='hiro'>
 			<a-entity
             position="0 1 0"
-            scale="0.3 0.3 0.3"
-            gltf-model="charizar.glb"
+            rotation="-90 0 0" 
+            scale="0.2 0.2 0.2"
+            gltf-model="#animated-charizar"
             ></a-entity>
 		</a-marker>
 
-		<!-- matrix: barcode 45 -->
+		<!-- matrix: barcode 45  FALTA-->
 		
         <a-marker type='barcode' value='45'>
 
             <!-- Objeto central-->
-            <a-entity geometry="primitive: sphere; radius: 1" material="src: url(texturas/csol.jpg)"></a-entity>
-            <a-entity geometry="primitive: plane; height: 10; width: 10" material="src: url(texturas/espacio.jpg); side: double" position="0 -1 0" rotation="90 0 0"></a-entity>
+            <a-entity geometry="primitive: tetrahedron;" material="src: url(texturas/dode-sol.jpg)"></a-entity>
 
             <!-- Segundo objeto-->
             <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear">
                 <!-- Mercurio -->
-                <a-entity geometry="primitive: dodecahedron" position="6 0 0" material="src: url(texturas/cmercurio.jpg)"></a-entity>
+                <a-entity geometry="primitive: dodecahedron" scale="0.5 0.5 0.5" position="2 0 0" material="src: url(texturas/dode1.jpg)"></a-entity>
                 <!-- Venus -->
-                <a-entity geometry="primitive: dodecahedron" position="-3 0 2" material="src: url(texturas/cvenus.jpg)"></a-entity>
+                <a-entity geometry="primitive: dodecahedron" scale="0.5 0.5 0.5" position="-2 0 3" material="src: url(texturas/dode2.jpg)"></a-entity>
                 <!-- Tierra -->
-                <a-entity geometry="primitive: dodecahedron" position="6 0 7" material="src: url(texturas/ctierra.jpg)"></a-entity>
+                <a-entity geometry="primitive: dodecahedron" position="-6 0 2" material="src: url(texturas/dode3.jpg)"></a-entity>
                 <!-- Marte -->
-                <a-entity geometry="primitive: dodecahedron" position="-6 0 2" material="src: url(texturas/cmarte.jpg)"></a-entity>
+                <a-entity geometry="primitive: dodecahedron" scale="0.6 0.6 0.6" position="-1 0 9" material="src: url(texturas/dode4.jpg)"></a-entity>
                 <!-- Jupiter -->
-                <a-entity geometry="primitive: dodecahedron" position="8 0 -3" material="src: url(texturas/cjupiter.jpg)"></a-entity>
-                <!-- Saturno -->
-                <a-entity geometry="primitive: dodecahedron" position="-6 0 7" material="src: url(texturas/csaturno.jpg)"></a-entity>
-                <a-entity geometry="primitive: dodecahedron" position="-6 0 7" material="src: url(texturas/anillos.png);" rotation="-90 0 0"></a-entity>
-                <!-- Urano -->
-                <a-entity geometry="primitive: dodecahedron" position="9 0 -1" material="src: url(texturas/curano.jpg)"></a-entity>
-                <!-- neptuno -->
-                <a-entity geometry="primitive: dodecahedron" position="-9 0 1" material="src: url(texturas/cneptuno.jpg)"></a-entity>
+                <a-entity geometry="primitive: dodecahedron" position="3 0 -3" material="src: url(texturas/dode5.jpg)"></a-entity>
                 
             </a-entity>
 
@@ -79,7 +72,7 @@
             <!-- Segundo objeto-->
             <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear">
                 <!-- Mercurio -->
-                <a-entity geometry="primitive: cone; radius: 0.1;" position="2 0 0" material="src: url(texturas/cmercurio.jpg)"></a-entity>
+                <a-entity geometry="primitive: cone; radius: 0.25;" position="2 0 0" material="src: url(texturas/cmercurio.jpg)"></a-entity>
                 <!-- Venus -->
                 <a-entity geometry="primitive: cone; radius: 0.25;" position="-2 0 1" material="src: url(texturas/cvenus.jpg)"></a-entity>
                 <!-- Tierra -->
@@ -111,7 +104,7 @@
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
-            <a-entity geometry="primitive: dodecahedron; radius: 1" material="color: purple"  position="0 2 0" opacity="0.5"></a-entity>
+            <a-entity geometry="primitive: torusKnot; radius:0.3; radius-tubular:0.08" material='opacity: 0.7; color:purple;'  position="0 1 0" opacity="0.5"></a-entity>
             </a-marker>
 			
 			<!--  Marcador Zombie  -->
@@ -122,7 +115,7 @@
                 rotation="-90 0 0" 
                 scale="0.015 0.015 0.015"
                 animation-mixer="loop: pingpong"
-                gltf-model="modelo3d/zombi.glb"
+                gltf-model="#animated-zombi"
                 ></a-entity>
             </a-marker>
 
