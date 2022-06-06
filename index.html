@@ -20,7 +20,7 @@
 	<a-assets>
       <a-asset-item
          id="animated-sony"
-         src="modelo3d/sony2.glb"
+         src="modelo3d/sony.glb"
       ></a-asset-item>
 	  <a-asset-item
          id="animated-zombi"
@@ -29,12 +29,17 @@
     </a-assets>
 
 		<!-- hiro charizar -->
-		<a-marker preset='hiro'>
+		<a-marker preset='hiro' raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerA">
 			<a-entity
             position="0 1 0"
             rotation="-90 0 0" 
             scale="0.2 0.2 0.2"
             gltf-model="#animated-sony"
+            class="clickable"
+            gesture-handler
             ></a-entity>
 		</a-marker>
 
